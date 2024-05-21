@@ -1,0 +1,65 @@
+name: laundry_service_app
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 2.0.0
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Base
+  cupertino_icons: ^1.0.6
+  nb_utils: ^6.0.4
+  intl: ^0.18.1
+  flutter_vector_icons: ^2.0.0
+  google_fonts: ^6.1.0
+
+  # Common
+
+  url_launcher: ^6.1.14
+  http: ^1.1.0
+  html: ^0.15.4
+
+
+  # STATE MANAGEMENT
+  mobx: ^2.2.0
+  flutter_mobx: ^2.1.0
+
+  #IMAGES
+  cached_network_image: ^3.3.0
+
+  # MAP
+  google_maps_flutter: ^2.5.0
+
+  # UI
+  flutter_svg: ^2.0.7
+  date_time_picker: 2.1.0
+
+dependency_overrides:
+  intl: ^0.18.1
+  http: ^1.1.0
+  cached_network_image: ^3.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  mobx_codegen: ^2.4.0
+  build_runner: ^2.4.6
+  #flutter packages pub run build_runner build --delete-conflicting-outputs
+
+
+
+flutter:
+
+  uses-material-design: true
+  assets:
+    - fonts/
+    - images/
+

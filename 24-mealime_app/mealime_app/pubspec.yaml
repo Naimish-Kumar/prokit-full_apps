@@ -1,0 +1,58 @@
+name: mealime_app
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 2.0.0
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Base
+  cupertino_icons: ^1.0.6
+  nb_utils: ^6.0.4
+  intl: ^0.18.1
+  flutter_vector_icons: ^2.0.0
+  google_fonts: ^6.1.0
+
+  # Common
+  share: ^2.0.4
+  url_launcher: ^6.1.14
+  http: ^1.1.0
+  html: ^0.15.4
+  package_info: ^2.0.2
+
+  # STATE MANAGEMENT
+  mobx: ^2.2.0
+  flutter_mobx: ^2.1.0
+
+  # UI
+  flutter_svg: ^2.0.7
+
+dependency_overrides:
+  intl: ^0.18.1
+  http: ^1.1.0
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  mobx_codegen: ^2.4.0
+  build_runner: ^2.4.6
+  #flutter packages pub run build_runner build --delete-conflicting-outputs
+
+
+flutter:
+
+  assets:
+    - fonts/
+    - images/
+  uses-material-design: true
+
+

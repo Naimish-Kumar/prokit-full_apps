@@ -1,0 +1,41 @@
+name: stock_investment_flutter
+description: A new Flutter project.
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Common
+  nb_utils: ^6.0.4
+  cached_network_image: ^3.2.3
+  fl_chart: ^0.63.0
+  url_launcher: ^6.1.11
+
+  # State Management
+  mobx: ^2.2.0
+  flutter_mobx: ^2.0.6+5
+
+dependency_overrides:
+
+  cached_network_image: 3.0.0
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  build_runner: ^2.3.3
+  mobx_codegen: ^2.1.1
+  #flutter packages pub run build_runner build --delete-conflicting-outputs
+
+flutter:
+
+  uses-material-design: true
+  assets:
+    - assets/stock/
+    - assets/icons/
+

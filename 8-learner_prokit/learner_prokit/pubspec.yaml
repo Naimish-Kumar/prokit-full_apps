@@ -1,0 +1,71 @@
+name: learner_prokit
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 2.0.0
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Base
+  cupertino_icons: ^1.0.6
+  nb_utils: ^6.0.4
+  intl: ^0.18.1
+  flutter_vector_icons: ^2.0.0
+  google_fonts: ^6.1.0
+
+  # STATE MANAGEMENT
+  mobx: ^2.2.0
+  flutter_mobx: ^2.1.0
+
+  # Learner
+  flutter_svg: ^2.0.7
+  cached_network_image: ^3.3.0
+  dots_indicator: ^3.0.0
+
+dependency_overrides:
+  intl: ^0.18.1
+  cached_network_image: ^3.3.0
+  http: ^1.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mobx_codegen: ^2.4.0
+  build_runner: ^2.4.6
+
+  flutter_launcher_icons: ^0.13.1
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "images/learner/learner_ic_logo.png"
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+   - images/learner/
+   - images/
+
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages

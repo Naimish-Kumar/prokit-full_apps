@@ -1,0 +1,53 @@
+name: home_hub
+description: home services app
+publish_to: 'none'
+
+version: 2.0.0
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  #For Dot indicator in pageView
+  smooth_page_indicator: ^1.0.0+2
+
+  #For Star rating
+  smooth_star_rating_null_safety: ^1.0.4+2
+
+  #For Country code picker
+  country_calling_code_picker: ^2.0.1
+
+  intl: ^0.18.1
+
+  #mobX
+  mobx: 2.2.0
+  flutter_mobx: 2.0.6+5
+
+
+  #shared preference
+  shared_preferences: ^2.1.2
+
+  cupertino_icons: ^1.0.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  build_runner:  2.4.5
+  mobx_codegen: 2.3.0
+
+dependency_overrides:
+  intl: ^0.17.0-nullsafety.2
+  http: ^0.13.0
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/

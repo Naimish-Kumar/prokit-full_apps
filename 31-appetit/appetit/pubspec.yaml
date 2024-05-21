@@ -1,0 +1,47 @@
+name: appetit
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 2.0.0
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  cupertino_icons: ^1.0.5
+
+  #get: ^4.6.1
+
+  nb_utils: ^6.0.4
+  google_fonts: ^5.0.0
+
+# STATE MANAGEMENT
+  mobx: ^2.2.0
+  flutter_mobx: ^2.0.6+5
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  mobx_codegen: ^2.3.0
+  build_runner: ^2.4.5
+
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: 'image/appetit/logo.png'
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - image/appetit/
+

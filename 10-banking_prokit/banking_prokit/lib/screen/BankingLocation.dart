@@ -1,0 +1,155 @@
+import 'package:banking_prokit/main.dart';
+import 'package:flutter/material.dart';
+import 'package:nb_utils/nb_utils.dart';
+import 'package:banking_prokit/model/BankingModel.dart';
+import 'package:banking_prokit/utils/BankingColors.dart';
+import 'package:banking_prokit/utils/BankingDataGenerator.dart';
+import 'package:banking_prokit/utils/BankingImages.dart';
+import 'package:banking_prokit/utils/BankingStrings.dart';
+import 'package:banking_prokit/utils/BankingWidget.dart';
+
+class BankingLocation extends StatefulWidget {
+  @override
+  _BankingLocationState createState() => _BankingLocationState();
+}
+
+class _BankingLocationState extends State<BankingLocation> {
+  late List<BankingLocationModel> mList1;
+
+  bool? isSelected;
+  String? txtHeader;
+
+  @override
+  void initState() {
+    super.initState();
+    isSelected = false;
+    mList1 = bankingLocationList();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            30.height,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Icon(
+                  Icons.chevron_left,
+                  size: 30,
+                  color: appStore.isDarkModeOn ? white : Banking_blackColor,
+                ).onTap(
+                  () {
+                    finish(context);
+                  },
+                ),
+                30.height,
+                Text(Banking_lbl_Branch_Location, style: boldTextStyle(size: 32)),
+              ],
+            ).paddingAll(16),
+            Container(
+              height: 250,
+              width: context.width(),
+              color: appStore.isDarkModeOn ? scaffoldDarkColor : Banking_greyColor,
+            ),
+            Container(
+              padding: EdgeInsets.all(16),
+              child: Column(
+                children: [
+                  TextFormField(
+                    decoration: InputDecoration(
+                      hintText: "Search Payment",
+                      labelStyle: primaryTextStyle(size: 18, color: Banking_greyColor),
+                      suffixIcon: Icon(Icons.search, color: Banking_greyColor),
+                      enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.black12)),
+                      errorBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.red)),
+                      focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Banking_greyColor)),
+                    ),
+                  ),
+                  ListView.separated(
+                    separatorBuilder: (BuildContext context, int index) => Divider(),
+                    scrollDirection: Axis.vertical,
+                    itemCount: mList1.length,
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    itemBuilder: (BuildContext context, int index) {
+                      return Container(
+                        padding: EdgeInsets.only(top: 8, bottom: 8),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                Image.asset(Banking_ic_Pin, color: Banking_Primary, height: 30, width: 30),
+                                16.width,
+                                Text(mList1[index].location!, style: primaryTextStyle()),
+                              ],
+                            ),
+                            Text(mList1[index].m!, style: boldTextStyle()),
+                          ],
+                        ),
+                      ).onTap(
+                        () {
+                          isSelected = true;
+                          txtHeader = mList1[index].location;
+                          setState(() {});
+                        },
+                      );
+                    },
+                  ).visible(isSelected == false),
+                  30.height,
+                  Column(
+                    children: [
+                      Row(
+                        children: [
+                          Image.asset(Banking_ic_Pin, height: 30, color: Banking_palColor),
+                          15.width,
+                          Text('722 canyon Street Plainfield', style: primaryTextStyle()),
+                        ],
+                      ),
+                      Divider(height: 35),
+                      Row(
+                        children: [
+                          Image.asset(Banking_ic_Call, height: 30, color: Banking_RedColor),
+                          15.width,
+                          Text('+1-302-555-0123', style: primaryTextStyle()),
+                        ],
+                      ),
+                      Divider(height: 35),
+                      Row(
+                        children: [
+                          Image.asset(Banking_ic_Website, height: 30, color: Banking_pinkLightColor),
+                          15.width,
+                          Text('www.cycaptialbank.com', style: primaryTextStyle()),
+                        ],
+                      ),
+                      Divider(height: 35),
+                      Row(
+                        children: [
+                          Image.asset(Banking_ic_Clock, height: 30, color: Banking_greenLightColor),
+                          15.width,
+                          Text('08:00 - 17:00', style: primaryTextStyle()),
+                        ],
+                      ),
+                      Divider(height: 35),
+                      BankingButton(
+                        textContent: Banking_lbl_Go_to_this_Place,
+                        onPressed: () {
+                          isSelected = false;
+                          setState(() {});
+                        },
+                      ),
+                    ],
+                  ).visible(isSelected == true),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
